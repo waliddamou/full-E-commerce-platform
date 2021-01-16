@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.activeCategoryLink {
+  color: #ad3216;
+  font-weight: 400;
+}

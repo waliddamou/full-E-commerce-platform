@@ -1,0 +1,334 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+
+.box {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+
+/* common */
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #ad3216;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #ad3216;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color:#ffff4d;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+/* bottom left*/
+.ribbon-bottom-left {
+  bottom: -10px;
+  left: -10px;
+}
+.ribbon-bottom-left::before,
+.ribbon-bottom-left::after {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-bottom-left::before {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-bottom-left::after {
+  top: 0;
+  left: 0;
+}
+.ribbon-bottom-left span {
+  right: -25px;
+  bottom: 30px;
+  transform: rotate(225deg);
+}
+
+/* bottom right*/
+.ribbon-bottom-right {
+  bottom: -10px;
+  right: -10px;
+}
+.ribbon-bottom-right::before,
+.ribbon-bottom-right::after {
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+
+.ul1 {
+  list-style-type: none;
+}
+
+.li1 {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+.label1 {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.label1::before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #ad3216;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+.label1 img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked+.label1 {
+  border-color: #ad3216;
+}
+
+:checked+.label1::before {
+  content: "✓";
+  background-color: #ad3216;
+  transform: scale(1);
+}
+
+:checked+.label1 img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #ad3216;
+  z-index: -1;
+}
+/* The design was made by Oleg Frolov and taken from https://dribbble.com/shots/3368130-Stepper-Touch  */
+
+
+
+/* Actual input */
+
+.input-number {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 2px;
+}
+
+.input-number span {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  display: inline-block;
+  background-color: white;
+  height: 100%;
+  width: 40px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  color: #ad3216;
+  letter-spacing: -1px;
+}
+
+.input-number button {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgba(255,255,255,.2);
+  transition: background-color .2s ease;
+}
+
+.input-number button:nth-of-type(1) {
+  padding-right: 20px;
+  background-color: #ad3216;
+}
+
+.input-number button:nth-of-type(2) {
+  padding-left: 20px;
+  background-color: #ad3216;
+}
+
+.input-number button:hover {
+  background-color: #373a47;
+}
+.modal1{
+  width:100%;
+}
+/* animate shopping cart */
+wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #ad3216;
+  background: linear-gradient(90deg, #ad3216, #ad3216);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+.button1::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button1:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.button1:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+.button1::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid white;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.button1:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
